@@ -1,18 +1,18 @@
-var url = 'http://api.icndb.com/jokes/random';
+const url = 'https://api.icndb.com/jokes/random';
 
-var button = document.getElementById('get-joke');
+const button = document.getElementById('get-joke');
 button.addEventListener('click', function(){
     getJoke();
 });
 getJoke();
 
-var paragraph = document.getElementById('joke');
+const paragraph = document.getElementById('joke');
 
 function getJoke() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.addEventListener('load', function() {
-        var response = JSON.parse(xhr.response);
+        let response = JSON.parse(xhr.response);
         paragraph.innerHTML = response.value.joke;
     });
     xhr.send();
